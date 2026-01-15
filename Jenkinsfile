@@ -15,7 +15,12 @@ pipeline{
   always{
    cleanWs()
   }
- 
+  failure{
+   mail to: walunjpallavi69@gmail.com
+         subject: 'Build Failed',
+		 body: 'Check Jenkins Console Logs'
+  
+  }
  
  }
 
