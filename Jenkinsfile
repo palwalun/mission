@@ -10,7 +10,7 @@ pipeline{
   }
   stage('Docker Build(Multistage Build)'){
    steps{
-    docker build -t mission:latest .
+    sh 'docker build -t mission:latest .'
    }
   
   }
