@@ -8,6 +8,12 @@ pipeline{
    }
   
   }
+  stage('Docker Build(Multistage Build)'){
+   steps{
+    docker build -t mission:latest .
+   }
+  
+  }
  
  
  }
