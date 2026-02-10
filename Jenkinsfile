@@ -1,7 +1,7 @@
 pipeline{
 agent any
 environment {
-    ACR_LOGIN_SERVER = 'your-acr-login-server.azurecr.io'
+    ACR_LOGIN_SERVER = 'devopsproject1.azurecr.io'
     IMAGE_NAME = 'mission'
     TAG = 'latest'
 }
@@ -47,14 +47,6 @@ environment {
 	     steps{
 	    sh 'docker push $ACR_LOGIN_SERVER/${IMAGE_NAME}:${TAG}'
 	    }
-	   }
-	   stage('Deploy to pord'){
-		steps{
-		 sh '''
-		 kubectl apply -f deployment.yml
-		 kubectl apply -f ingress.yml
-		 '''
-		}
 	   }
   
   }
