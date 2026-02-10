@@ -48,6 +48,13 @@ environment {
 	    sh 'docker push $ACR_LOGIN_SERVER/${IMAGE_NAME}:${TAG}'
 	    }
 	   }
+       stage('deploy'){
+	     steps{
+	    sh '''kubectl apply -f deployment.yml
+		      kubectl apply -f ingress.yml
+		   '''
+	    }
+	   }
   
   }
 }
