@@ -10,15 +10,15 @@ spec:
   matchLabels:
    app: web
  template:
-  metadata:
-   name: mission-pod
-   labels:
-    app: web
-  spec:
-   containers:
-    - name: mission-cont
-      image: devopsproject1.azurecr.io/mission:latest
-      ports:
+   metadata:
+    name: mission-pod
+    labels:
+     app: web
+   spec: 
+    containers:
+     - name: mission-container
+       image: mission.devopsproject1.azurecr.io
+       ports:
         - containerPort: 8080
 ---
 apiVersion: v1
