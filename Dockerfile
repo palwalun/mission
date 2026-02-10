@@ -1,4 +1,4 @@
-FROM openjdk:19-ea-jdk-alpine3.1
+FROM openjdk:26-ea-11-jdk
 WORKDIR /app
 COPY target/*.jar app.jar
 EXPOSE 8080
