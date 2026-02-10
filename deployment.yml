@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: mission:deployment
+ name: mission-deployment
  labels:
   app: web
 spec:
