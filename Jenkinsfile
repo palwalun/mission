@@ -1,5 +1,10 @@
 pipeline{
 agent any
+environment {
+    ACR_LOGIN_SERVER = 'your-acr-login-server.azurecr.io'
+    IMAGE_NAME = 'mission'
+    TAG = 'latest'
+}
   stages{
    stage('Checkout'){
     steps{
