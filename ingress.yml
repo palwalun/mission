@@ -1,17 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
- name: mission-ingress
- annotations:
-  nginx.ingress.kubernetes.io/rewrite-target: /
+  name: mission-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
- rules:
-  - http:
-      paths:
-       - path: /
-         pathType: Prefix
-         backend:
-          service:
-           name: mission-svc
-           port:
-            number: 80
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /mission
+            pathType: Prefix
+            backend:
+              service:
+                name: mission-svc
+                port:
+                  number: 80
