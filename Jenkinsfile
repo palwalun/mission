@@ -11,6 +11,11 @@ agent any
 	 sh 'mvn clean package -DskipTests'
 	}
    }
+   stage('Build Docker Image'){
+    steps{
+	 sh 'docker build -t mission:latest'
+	}
+   }
   
   }
 }
